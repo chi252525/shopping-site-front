@@ -19,8 +19,8 @@
 
         <q-space />
 
-        <q-btn flat round dense icon="person" />
-        <q-btn flat round dense icon="tree" />
+        <q-btn flat round dense icon="person" :to="{ name: 'login' }" />
+        <q-btn flat round dense icon="cart" />
         <q-btn flat round dense icon="login" />
       </q-toolbar>
     </q-header>
