@@ -5,7 +5,11 @@
         <div class="text-h5 text-center">會員登入</div>
       </q-card-section>
       <q-card-section>
-        <q-btn @click="loginWithGoogle" color="primary" label="使用 Google 登入" />
+        <q-btn
+          @click="loginWithGoogle"
+          color="primary"
+          label="使用 Google 登入"
+        />
       </q-card-section>
     </q-card>
   </q-page>
@@ -29,9 +33,12 @@ const handleCallback = async () => {
   if (code) {
     try {
       // 使用模板字串和反引號來插入 code 變數
-      const res = await fetch(`http://localhost:8080/api/oauth2/callback?code=${code}`, {
-        method: 'GET',
-      });
+      const res = await fetch(
+        `http://localhost:8080/api/oauth2/callback?code=${code}`,
+        {
+          method: 'GET',
+        }
+      );
 
       const data = await res.json();
 
@@ -39,7 +46,7 @@ const handleCallback = async () => {
       if (data.status === 'success') {
         localStorage.setItem('token', data.token); // 儲存 JWT token
         console.log('Token:', data.token);
-        
+
         // 重定向至首頁或其他指定頁面
         router.push('/');
       } else {
@@ -56,4 +63,25 @@ const handleCallback = async () => {
 if (window.location.search.includes('code=')) {
   handleCallback();
 }
+
+onMounted(() => {
+  if (window.google) {
+    window.google.accounts.id.initialize({
+      client_id:
+        '1027690015366-mjcb5iblrf7vh9r9pt83kjnq6sk489j8.apps.googleusercontent.com',
+      callback: handleCredentialResponse,
+    });
+    window.google.accounts.id.renderButton(
+      document.getElementById('googleButton'),
+      { theme: 'outline', size: 'large' } // customization attributes
+    );
+  } else {
+    $q.notify({
+      color: 'negative',
+      position: 'top',
+      message: 'Google Sign-In failed to load',
+      icon: 'report_problem',
+    });
+  }
+});
 </script>
