@@ -30,8 +30,6 @@
       <q-tab name="上著｜TOP｜トップ" label="上著｜TOP｜トップ" />
     </q-tabs>
     <Product class="q-mt-xs" />
-    <Product class="q-mt-xs" />
-    <Product class="q-mt-xs" />
   </q-page-container>
 </template>
 

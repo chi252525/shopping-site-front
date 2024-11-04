@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-center q-col-gutter-lg">
-    <div class="col-auto" v-for="i in 3" :key="i">
+    <div class="col-auto" >
       <q-card class="my-card">
         <q-img
           src="https://down-tw.img.susercontent.com/file/tw-11134207-7rase-m0wq7v9hi24acb@resize_w900_nl.webp"
