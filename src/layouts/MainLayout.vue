@@ -4,11 +4,7 @@
       <q-toolbar :style="{ height: '100px', backgroundColor: '#045926' }">
         <q-space />
         <div class="avatar-container">
-          <img
-            src="~/assets/images/logo.png"
-            alt="Logo"
-            class="circular-image"
-          />
+          <img src="~/assets/images/logo.png" alt="Logo" class="square-image" />
         </div>
 
         <q-tabs dense class="text-white">
@@ -64,18 +60,19 @@ defineOptions({
 </script>
 <style scoped>
 .avatar-container {
-  width: 100px; /* 设置宽度 */
-  height: 100px; /* 设置高度 */
-  border-radius: 50%; /* 使容器变为圆形 */
+  width: 80px; /* 设置宽度 */
+  height: 80px; /* 设置高度 */
+  border-radius: 0; /* 使容器变为圆形 */
   overflow: hidden; /* 超出部分隐藏 */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.circular-image {
-  width: 100%; /* 使图片宽度填满容器 */
-  height: 100%; /* 使图片高度填满容器 */
-  object-fit: cover; /* 保持图片的纵横比并裁剪 */
+.square-image {
+  width: 100px; /* Set width */
+  height: 100px; /* Set height to match width for a square */
+  /* Remove any circular styling */
+  border-radius: 0;
 }
 </style>

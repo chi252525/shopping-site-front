@@ -80,7 +80,7 @@ const product = ref({
   description:
     'This is an example product description. It showcases the features and benefits of the product.',
   images: [
-    'https://down-tw.img.susercontent.com/file/tw-11134207-7rase-m0wq7v9hi24acb@resize_w900_nl.webp',
+    'https://i.postimg.cc/fy8ppCf6/535500.jpg',
     'https://down-tw.img.susercontent.com/file/tw-11134207-7rase-m0wq7v9hi24acb@resize_w900_nl.webp',
     'https://down-tw.img.susercontent.com/file/tw-11134207-7rase-m0wq7v9hi24acb@resize_w900_nl.webp',
   ],

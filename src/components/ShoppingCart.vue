@@ -12,9 +12,10 @@
 </template>
 
 <script>
-import { useCartStore } from '../stores/cartStore'; 
+import { useCartStore } from '../stores/cartStore';
 
 export default {
+  name: 'ShoppingCart',
   setup() {
     const cart = useCartStore();
     return { cart };

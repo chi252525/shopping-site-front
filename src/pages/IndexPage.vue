@@ -10,12 +10,7 @@
     >
       <q-carousel-slide
         :name="1"
-        img-src="https://down-ver-tw.img.susercontent.com/tw-11134210-7rasf-m0vfhghnlmufbc.webp"
-        class="full-width"
-      />
-      <q-carousel-slide
-        :name="2"
-        img-src="https://down-ver-tw.img.susercontent.com/tw-11134210-7ras9-m10wrvo2f045cd.webp"
+        img-src="https://i.postimg.cc/bNfTmMZ4/Banner.jpg"
         class="full-width"
       />
     </q-carousel>
@@ -29,17 +24,69 @@
       <q-tab name="下著｜Bottom｜ボトム" label="下著｜Bottom｜ボトム" />
       <q-tab name="上著｜TOP｜トップ" label="上著｜TOP｜トップ" />
     </q-tabs>
-    <Product class="q-mt-xs" />
   </q-page-container>
+  <div class="q-gutter-md row justify-center">
+    <div
+      class="col-xs-12 col-sm-3 col-md-2"
+      v-for="product in products"
+      :key="product.id"
+    >
+      <ProductItem class="q-mt-xs" :product="product" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 defineOptions({
   name: 'IndexPage',
 });
-import { ref } from 'vue';
-import Product from '../components/Product.vue';
+import { ref, onMounted } from 'vue';
+import ProductItem from '../components/ProductItem.vue';
 const carouselValue = ref(1);
+const products = ref<Product[]>([]);
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+  imageUrl: string;
+}
+onMounted(() => {
+  fetchProducts();
+});
+function fetchProducts() {
+  console.log('Fetching products');
+  products.value = [
+    {
+      id: 1,
+      name: 'Jacket',
+      price: 1500,
+      description: '外套｜jackets｜ジャケット',
+      imageUrl: 'https://i.postimg.cc/fy8ppCf6/535500.jpg',
+    },
+    {
+      id: 2,
+      name: 'Suit',
+      price: 3500,
+      description: '套裝｜suit｜スーツ',
+      imageUrl: 'https://i.postimg.cc/fy8ppCf6/535500.jpg',
+    },
+    {
+      id: 3,
+      name: 'Bottom',
+      price: 1200,
+      description: '下著｜Bottom｜ボトム',
+      imageUrl: 'https://i.postimg.cc/fy8ppCf6/535500.jpg',
+    },
+    {
+      id: 4,
+      name: 'Top',
+      price: 900,
+      description: '上著｜TOP｜トップ',
+      imageUrl: 'https://i.postimg.cc/fy8ppCf6/535500.jpg',
+    },
+  ];
+}
 </script>
 <style scoped>
 .full-width {
