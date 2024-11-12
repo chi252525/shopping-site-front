@@ -45,6 +45,7 @@
 
 <script>
 export default {
+  name: 'SCart',
   data() {
     return {
       // Sample cart items
