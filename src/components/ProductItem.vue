@@ -20,33 +20,32 @@
 </template>
 
 <script lang="ts">
-import { defineProps } from 'vue';
-// Define the component name
-export default {
-  name: 'ProductItem',
-}
-
+import { defineOptions, defineComponent, PropType } from 'vue';
 defineOptions({
   name: 'ProductItem', // Change to a multi-word name
 });
-// Define the product prop without assigning it to a variable
-defineProps<{
-  product: {
-    imageUrl: string;
-    name: string;
-    description: string;
-    price: number;
-  };
-}>();
-
-// Button action methods
-function buyNow() {
-  console.log('Buying product');
-}
-
-function addToCart() {
-  console.log('Adding product to cart');
-}
+export default defineComponent({
+  name: 'ProductItem',
+  props: {
+    product: {
+      type: Object as PropType<{
+        name: string;
+        description: string;
+        price: number;
+        imageUrl: string;
+      }>,
+      required: true,
+    },
+  },
+  methods: {
+    buyNow() {
+      console.log('Buying product');
+    },
+    addToCart() {
+      console.log('Adding product to cart');
+    },
+  },
+});
 </script>
 
 <style scoped>

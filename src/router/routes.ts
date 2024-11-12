@@ -21,8 +21,18 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/CheckOut.vue') }],
   },
-  // Always leave this as last one,
-  // but you can also remove it
+  {
+    path: '/shoppingcart',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/ShoppingCart.vue') }],
+  },
+  {
+    path: '/mypage',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/shopper/MyOrder.vue') },
+    ],
+  },
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),

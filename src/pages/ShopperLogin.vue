@@ -17,6 +17,8 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
+// Ensure you're importing from 'vue' not 'vue-router'
+import { onMounted } from 'vue';
 
 const router = useRouter();
 
@@ -69,7 +71,7 @@ onMounted(() => {
     window.google.accounts.id.initialize({
       client_id:
         '1027690015366-mjcb5iblrf7vh9r9pt83kjnq6sk489j8.apps.googleusercontent.com',
-      callback: handleCredentialResponse,
+      callback: handleCallback,
     });
     window.google.accounts.id.renderButton(
       document.getElementById('googleButton'),

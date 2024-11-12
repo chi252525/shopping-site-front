@@ -4,7 +4,13 @@
       <q-toolbar :style="{ height: '100px', backgroundColor: '#045926' }">
         <q-space />
         <div class="avatar-container">
-          <img src="~/assets/images/logo.png" alt="Logo" class="square-image" />
+          <router-link to="/">
+            <img
+              src="~/assets/images/logo.png"
+              alt="Logo"
+              class="square-image"
+            />
+          </router-link>
         </div>
 
         <q-tabs dense class="text-white">
@@ -15,9 +21,17 @@
 
         <q-space />
 
-        <q-btn flat round dense icon="person" :to="{ name: 'login' }" />
-        <q-btn flat round dense icon="cart" />
-        <q-btn flat round dense icon="login" />
+        <router-link to="/mypage">
+          <q-btn flat round dense icon="person" color="white" />
+        </router-link>
+
+        <router-link to="/shoppingcart">
+          <q-btn flat round dense icon="shopping_cart" color="white" />
+        </router-link>
+
+        <router-link to="/login">
+          <q-btn flat round dense icon="login" color="white" />
+        </router-link>
       </q-toolbar>
     </q-header>
 
