@@ -24,7 +24,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/shoppingcart',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/ShoppingCart.vue') }],
+    children: [{ path: '', component: () => import('src/pages/Cart.vue') }],
   },
   {
     path: '/mypage',
