@@ -19,8 +19,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import { defineProps } from 'vue';
+// Define the component name
+export default {
+  name: 'ProductItem',
+}
+
 defineOptions({
   name: 'ProductItem', // Change to a multi-word name
 });
