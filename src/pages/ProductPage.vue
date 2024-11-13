@@ -29,6 +29,7 @@
         <h1 class="text-h4 q-mb-md">{{ product.name }}</h1>
         <p class="text-h6 q-mb-sm">Price: ${{ product.price.toFixed(2) }}</p>
         <p class="text-subtitle1 q-mb-md">SKU: {{ product.sku }}</p>
+        <p class="q-mb-md">{{ product.description }}</p>
 
         <!-- Quantity Selector -->
         <div class="row items-center q-mb-md">
@@ -57,7 +58,7 @@
         <q-btn
           color="primary"
           icon="shopping_cart"
-          label="加到購物車"
+          label="Add to Cart"
           @click="addToCart"
           class="q-mt-md"
         />
@@ -67,12 +68,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import { useQuasar } from 'quasar';
 
 const $q = useQuasar();
+const route = useRoute();
 
-// Mock product data
+// Mock product data, ideally you would fetch this from an API based on the product ID
 const product = ref({
   name: '庫洛米棉外套 5-17號',
   price: 99.99,
@@ -89,6 +92,31 @@ const product = ref({
 const slide = ref(0);
 const autoplay = ref(true);
 const quantity = ref(1);
+
+// Fetch product data based on the product ID from the URL
+onMounted(() => {
+  const productId = route.params.id;
+  fetchProduct(productId);
+});
+
+// Example of fetching product data (mock)
+function fetchProduct(id) {
+  // Replace this with an actual API request using the product ID
+  // Here we're using the mock data above.
+  if (id === '1') {
+    product.value = {
+      name: '庫洛米棉外套 5-17號',
+      price: 99.99,
+      sku: 'EX-123456',
+      description:
+        'This is an example product description. It showcases the features and benefits of the product.',
+      images: [
+        'https://i.postimg.cc/fy8ppCf6/535500.jpg',
+        'https://down-tw.img.susercontent.com/file/tw-11134207-7rase-m0wq7v9hi24acb@resize_w900_nl.webp',
+      ],
+    };
+  }
+}
 
 const incrementQuantity = () => {
   quantity.value++;

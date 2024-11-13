@@ -27,12 +27,17 @@
   </q-page-container>
   <div class="q-gutter-md row justify-center">
     <div
-      class="col-xs-12 col-sm-3 col-md-2"
+      class="col-12 col-sm-6 col-md-3 col-lg-2"
       v-for="product in products"
       :key="product.id"
     >
-      <ProductItem class="q-mt-xs" :product="product" />
+      <router-link :to="`/product/${product.id}`">
+        <ProductItem class="q-mt-xs" :product="product" />
+      </router-link>
     </div>
+  </div>
+  <div class="q-mt-xl flex justify-center">
+    <q-pagination v-model="carouselValue" :max="5" :direction-links="true" />
   </div>
 </template>
 

@@ -9,11 +9,6 @@
             <div class="text-subtitle2">{{ product.price }} 元</div>
           </div>
         </q-img>
-
-        <q-card-actions>
-          <q-btn flat @click="buyNow">立即購買</q-btn>
-          <q-btn flat @click="addToCart">加到購物車</q-btn>
-        </q-card-actions>
       </q-card>
     </div>
   </div>
@@ -35,14 +30,6 @@ export default defineComponent({
         imageUrl: string;
       }>,
       required: true,
-    },
-  },
-  methods: {
-    buyNow() {
-      console.log('Buying product');
-    },
-    addToCart() {
-      console.log('Adding product to cart');
     },
   },
 });

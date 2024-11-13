@@ -12,7 +12,7 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/ShopperLogin.vue') }],
   },
   {
-    path: '/product',
+    path: '/product/:id',
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/ProductPage.vue') }],
   },

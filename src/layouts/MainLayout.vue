@@ -37,7 +37,7 @@
 
     <q-page-container>
       <router-view />
-      <div class="bg-grey-2 text-black">
+      <div class="bg-grey-2 text-black q-mt-xl">
         <div
           class="q-pa-xl row justify-between items-center"
           style="min-height: 100px"
