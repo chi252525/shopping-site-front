@@ -36,7 +36,9 @@
         </q-card-section>
 
         <q-card-actions>
-          <q-btn label="Checkout" color="primary" @click="checkout" />
+          <router-link to="/checkout">
+            <q-btn label="Checkout" color="primary" />
+          </router-link>
         </q-card-actions>
       </q-card>
     </div>
@@ -50,6 +52,7 @@ export default {
     return {
       // Sample cart items
       cartItems: [
+        // from cartStore.ts
         { id: 1, name: 'Product 1', price: 30, quantity: 1 },
         { id: 2, name: 'Product 2', price: 45, quantity: 1 },
         { id: 3, name: 'Product 3', price: 20, quantity: 1 },
@@ -62,15 +65,6 @@ export default {
       this.totalPrice = this.cartItems.reduce((sum, item) => {
         return sum + item.price * item.quantity;
       }, 0);
-    },
-    checkout() {
-      // Simulate a checkout process
-      this.$q.notify({
-        type: 'positive',
-        message: 'Checkout successful!',
-      });
-      this.cartItems = []; // Clear cart after checkout
-      this.totalPrice = 0; // Reset total
     },
   },
   mounted() {
