@@ -4,6 +4,18 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
+    beforeEnter: (to, from, next) => {
+      const token = to.query.token;
+      if (typeof token === 'string') {
+        // 將 token 存到 localStorage 或 Vuex
+        localStorage.setItem('authToken', token);
+
+        // 移除 URL 中的 token 參數
+        next({ path: '/', query: {} });
+      } else {
+        next();
+      }
+    },
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
   {
