@@ -19,7 +19,7 @@
 import { useRouter } from 'vue-router';
 // Ensure you're importing from 'vue' not 'vue-router'
 import { onMounted } from 'vue';
-
+import axios from 'axios';
 const router = useRouter();
 
 // 重定向到後端的 Google 登入頁面
@@ -35,11 +35,8 @@ const handleCallback = async () => {
   if (code) {
     try {
       // 使用模板字串和反引號來插入 code 變數
-      const res = await fetch(
-        `http://localhost:8080/api/oauth2/callback?code=${code}`,
-        {
-          method: 'GET',
-        }
+      const res = await axios.get(
+        `http://localhost:8080/api/oauth2/callback?code=${code}`
       );
 
       const data = await res.json();
@@ -50,7 +47,7 @@ const handleCallback = async () => {
         console.log('Token:', data.token);
 
         // 重定向至首頁或其他指定頁面
-        router.push('/');
+        await router.push('/');
       } else {
         alert('登入失敗');
       }
