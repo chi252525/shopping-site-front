@@ -10,6 +10,7 @@ export default {
     googleLogin() {
       window.location.href = 'http://localhost:8080/api/oauth2/login';
     },
+    
   },
 };
 </script>
