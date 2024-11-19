@@ -46,16 +46,21 @@
             <div class="flex">
               <div class="col-4">
                 <div>聯絡我們 &nbsp;</div>
-                <div>時間/ 週一～週五 09:00-17:00</div>
+                <div>
+                  搜尋&nbsp; 常見問題&nbsp; 關於我們&nbsp; 服務條款&nbsp;
+                  隱私政策&nbsp; 運輸政策&nbsp; 退換貨政策&nbsp;
+                  廠商合作請進&nbsp;
+                </div>
+                <div>客服時間： 週一～週五 09:00-17:00</div>
+                <div>© 2024 葳兔童裝有限公司</div>
               </div>
             </div>
           </div>
-          <div>
-            <span>© 2024 葳兔童裝有限公司</span>
-          </div>
-          <div>
-            <q-btn flat round dense icon="facebook" />
-            <q-btn flat round dense icon="instagram" />
+          <div></div>
+          <div class="q-pa-md">
+            <q-btn flat round dense icon="facebook" color="primary" />
+            <q-btn flat round dense icon="instagram" color="primary" />
+            <q-btn flat round dense icon="youtube" color="primary" />
           </div>
         </div>
       </div>

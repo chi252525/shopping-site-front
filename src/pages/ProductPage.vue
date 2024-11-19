@@ -1,8 +1,8 @@
 <template>
-  <q-page padding>
-    <div class="row q-col-gutter-md">
+  <q-page class="">
+    <div class="row q-col-gutter-sm">
       <!-- Image Preview -->
-      <div class="col-12 col-md-6">
+      <div class="col-6">
         <q-carousel
           v-model="slide"
           animated
@@ -25,7 +25,7 @@
       </div>
 
       <!-- Product Details -->
-      <div class="col-12 col-md-6">
+      <div class="col-6">
         <h1 class="text-h4 q-mb-md">{{ product.name }}</h1>
         <p class="text-h6 q-mb-sm">Price: ${{ product.price.toFixed(2) }}</p>
         <p class="text-subtitle1 q-mb-md">SKU: {{ product.sku }}</p>
@@ -33,9 +33,7 @@
 
         <!-- Quantity Selector -->
         <div class="row items-center q-mb-md">
-          <div class="col-12 col-sm-auto">
-            <p class="text-subtitle1 q-mb-sm">Quantity:</p>
-          </div>
+          <div class="col-12 col-sm-auto"></div>
           <div class="col-12 col-sm-auto">
             <q-btn-group>
               <q-btn
@@ -58,50 +56,35 @@
         <q-btn
           color="primary"
           icon="shopping_cart"
-          label="Add to Cart"
+          label="加入購物車"
           @click="addToCart"
           class="q-mt-md"
         />
       </div>
     </div>
-    <div class="q-pa-md">
-      <div class="q-gutter-y-md" style="max-width: 600px">
-        <q-card>
-          <q-tabs
-            v-model="tab"
-            dense
-            class="text-grey"
-            active-color="primary"
-            indicator-color="primary"
-            narrow-indicator
-          >
-            <q-tab name="mails" label="Mails" />
-            <q-tab name="alarms" label="Alarms" />
-            <q-tab name="movies" label="Movies" />
-          </q-tabs>
-
-          <q-separator />
-
-          <q-tab-panels v-model="tab" animated>
-            <q-tab-panel name="mails">
-              <div class="text-h6">Mails</div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </q-tab-panel>
-
-            <q-tab-panel name="alarms">
-              <div class="text-h6">Alarms</div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </q-tab-panel>
-
-            <q-tab-panel name="movies">
-              <div class="text-h6">Movies</div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </q-tab-panel>
-          </q-tab-panels>
-        </q-card>
-      </div>
-    </div>
   </q-page>
+  <div class="col-12">
+    <q-card>
+      <q-tabs
+        dense
+        class="text-grey"
+        active-color="primary"
+        indicator-color="primary"
+        narrow-indicator
+      >
+        <q-tab name="mails" label="尺寸表" />
+      </q-tabs>
+
+      <q-separator />
+
+      <q-tab-panels v-model="tab" animated>
+        <q-tab-panel name="mails">
+          <div class="text-h6">尺寸表</div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </q-tab-panel>
+      </q-tab-panels>
+    </q-card>
+  </div>
 </template>
 
 <script setup>
@@ -145,8 +128,7 @@ function fetchProduct(id) {
       name: '庫洛米棉外套 5-17號',
       price: 99.99,
       sku: 'EX-123456',
-      description:
-        'This is an example product description. It showcases the features and benefits of the product.',
+      description: 'This is an example product description',
       images: [
         'https://i.postimg.cc/fy8ppCf6/535500.jpg',
         'https://down-tw.img.susercontent.com/file/tw-11134207-7rase-m0wq7v9hi24acb@resize_w900_nl.webp',
