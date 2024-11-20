@@ -8,7 +8,7 @@
               <q-avatar color="teal" text-color="white" icon="list_alt" />
             </q-item-section>
 
-            <q-item-section>我的歷史清單</q-item-section>
+            <q-item-section>我的歷史訂單</q-item-section>
           </q-item>
 
           <q-item clickable v-ripple>
@@ -47,7 +47,12 @@
               <q-item v-for="order in orders" :key="order.id">
                 <q-item-section>
                   <div class="q-gutter-xs">
-                    <div class="text-subtitle2">訂單編號 #{{ order.id }}</div>
+                    <div class="text-subtitle2">
+                      訂單編號 #{{ order.indicationOrderNumber }}
+                    </div>
+                    <div class="text-subtitle3">
+                      訂單時間 {{ order.orderDate }}
+                    </div>
                   </div>
                 </q-item-section>
 
@@ -70,15 +75,23 @@ export default {
       // Sample orders data (this would typically come from an API)
       orders: [
         {
-          id: 1,
+          indicationOrderNumber: 1,
           status: 'Shipped',
+          orderDate: '2021-07-01',
           totalPrice: 120,
           items: ['Product 1', 'Product 2'],
         },
-        { id: 2, status: 'Delivered', totalPrice: 80, items: ['Product 3'] },
         {
-          id: 3,
+          indicationOrderNumber: 2,
+          status: 'Delivered',
+          orderDate: '2021-07-05',
+          totalPrice: 80,
+          items: ['Product 3'],
+        },
+        {
+          indicationOrderNumber: 3,
           status: 'Pending',
+          orderDate: '2021-07-10',
           totalPrice: 200,
           items: ['Product 4', 'Product 5', 'Product 6'],
         },
