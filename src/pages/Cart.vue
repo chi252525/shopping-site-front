@@ -51,11 +51,11 @@
 
         <!-- Total Price Section -->
         <q-card-section>
-          <div class="text-h6 text-right">小計 ${{ totalPrice }}</div>
-          <div class="row items-center justify-between full-width">
-            <q-btn label="結帳" color="primary" class="full-width q-ml-sm" />
-          </div>
+          <div class="text-h6">小計 ${{ totalPrice }}</div>
         </q-card-section>
+
+        <!-- Checkout Button Section -->
+        <q-card-actions class="q-gutter-md"> </q-card-actions>
       </q-card>
     </div>
   </q-page>
