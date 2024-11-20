@@ -1,34 +1,103 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="q-pa-md" style="width: 500px">
-      <q-card>
-        <q-card-section>
-          <div class="text-h6">My Orders</div>
-        </q-card-section>
+  <q-page class="q-gutter-md">
+    <div class="row justify-around">
+      <div class="col-3">
+        <q-list bordered class="rounded-borders">
+          <q-expansion-item
+            expand-separator
+            icon="mail"
+            label="Inbox"
+            caption="5 unread emails"
+            default-opened
+          >
+            <q-expansion-item
+              :header-inset-level="1"
+              expand-separator
+              icon="receipt"
+              label="Receipts"
+              default-opened
+            >
+              <q-expansion-item
+                switch-toggle-side
+                dense-toggle
+                label="Today"
+                :header-inset-level="1"
+                :content-inset-level="2"
+              >
+                <q-card>
+                  <q-card-section>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quidem, eius reprehenderit eos corrupti commodi magni
+                    quaerat ex numquam, dolorum officiis modi facere maiores
+                    architecto suscipit iste eveniet doloribus ullam aliquid.
+                  </q-card-section>
+                </q-card>
+              </q-expansion-item>
 
-        <q-card-section>
-          <q-list bordered>
-            <q-item v-for="order in orders" :key="order.id">
-              <q-item-section>
-                <div class="q-gutter-xs">
-                  <div class="text-subtitle2">Order #{{ order.id }}</div>
-                  <div class="text-caption">Status: {{ order.status }}</div>
+              <q-expansion-item
+                switch-toggle-side
+                dense-toggle
+                label="Yesterday"
+                :header-inset-level="1"
+                :content-inset-level="2"
+              >
+                <q-card>
+                  <q-card-section>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Quidem, eius reprehenderit eos corrupti commodi magni
+                    quaerat ex numquam, dolorum officiis modi facere maiores
+                    architecto suscipit iste eveniet doloribus ullam aliquid.
+                  </q-card-section>
+                </q-card>
+              </q-expansion-item>
+            </q-expansion-item>
+
+            <q-expansion-item
+              :header-inset-level="1"
+              :content-inset-level="1"
+              expand-separator
+              icon="schedule"
+              label="Postponed"
+            >
+              <q-card>
+                <q-card-section>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Quidem, eius reprehenderit eos corrupti commodi magni quaerat
+                  ex numquam, dolorum officiis modi facere maiores architecto
+                  suscipit iste eveniet doloribus ullam aliquid.
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+          </q-expansion-item>
+        </q-list>
+      </div>
+      <div class="col-9">
+        <q-card>
+          <q-card-section>
+            <div class="text-h6">我的訂單</div>
+          </q-card-section>
+
+          <q-card-section>
+            <q-list bordered>
+              <q-item v-for="order in orders" :key="order.id">
+                <q-item-section>
+                  <div class="q-gutter-xs">
+                    <div class="text-subtitle2">訂單編號 #{{ order.id }}</div>
+                    <div class="flex">
+                      <div class="text-caption">Status: {{ order.status }}</div>
+                      <div class="text-caption">Status: {{ order.status }}</div>
+                    </div>
+                  </div>
+                </q-item-section>
+
+                <q-item-section side>
                   <div class="text-caption">Total: ${{ order.totalPrice }}</div>
-                </div>
-              </q-item-section>
-
-              <q-item-section side>
-                <q-btn
-                  flat
-                  dense
-                  label="View Details"
-                  @click="viewOrderDetails(order.id)"
-                />
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-card-section>
-      </q-card>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
   </q-page>
 </template>

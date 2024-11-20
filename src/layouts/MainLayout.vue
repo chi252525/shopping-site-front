@@ -26,7 +26,9 @@
         </router-link>
 
         <router-link to="/shoppingcart">
-          <q-btn flat round dense icon="shopping_cart" color="white" />
+          <q-btn flat round dense icon="shopping_cart" color="white">
+            <q-badge floating color="red" rounded
+          /></q-btn>
         </router-link>
 
         <router-link to="/login">

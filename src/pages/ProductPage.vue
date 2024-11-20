@@ -1,8 +1,8 @@
 <template>
-  <q-page class="">
-    <div class="row q-col-gutter-sm">
+  <q-page>
+    <div class="row justify-center">
       <!-- Image Preview -->
-      <div class="col-6">
+      <div class="col-4">
         <q-carousel
           v-model="slide"
           animated
@@ -25,15 +25,17 @@
       </div>
 
       <!-- Product Details -->
-      <div class="col-6">
+      <div class="col-4">
         <h1 class="text-h4 q-mb-md">{{ product.name }}</h1>
-        <p class="text-h6 q-mb-sm">Price: ${{ product.price.toFixed(2) }}</p>
+        <p class="text-h6 q-mb-sm">${{ product.price.toFixed(2) }}</p>
         <p class="text-subtitle1 q-mb-md">SKU: {{ product.sku }}</p>
         <p class="q-mb-md">{{ product.description }}</p>
-
+        <p class="text-subtitle1 q-mb-md">尺寸</p>
+        <q-select square standout :options="options" label="Square outlined" />
+        <p class="text-subtitle1 q-mb-md">顏色</p>
+        <q-select square standout :options="options" label="Square outlined" />
         <!-- Quantity Selector -->
         <div class="row items-center q-mb-md">
-          <div class="col-12 col-sm-auto"></div>
           <div class="col-12 col-sm-auto">
             <q-btn-group>
               <q-btn
@@ -44,7 +46,7 @@
               <q-input
                 v-model.number="quantity"
                 type="number"
-                style="width: 60px"
+                style="width: 30px"
                 dense
               />
               <q-btn icon="add" @click="incrementQuantity" />
@@ -62,29 +64,31 @@
         />
       </div>
     </div>
+    <div class="row justify-center">
+      <div class="col-8">
+        <q-card>
+          <q-tabs
+            dense
+            class="text-grey"
+            active-color="primary"
+            indicator-color="primary"
+            narrow-indicator
+          >
+            <q-tab name="mails" label="尺寸表" />
+          </q-tabs>
+
+          <q-separator />
+
+          <q-tab-panels v-model="tab" animated>
+            <q-tab-panel name="mails">
+              <div class="text-h6">尺寸表</div>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </q-tab-panel>
+          </q-tab-panels>
+        </q-card>
+      </div>
+    </div>
   </q-page>
-  <div class="col-12">
-    <q-card>
-      <q-tabs
-        dense
-        class="text-grey"
-        active-color="primary"
-        indicator-color="primary"
-        narrow-indicator
-      >
-        <q-tab name="mails" label="尺寸表" />
-      </q-tabs>
-
-      <q-separator />
-
-      <q-tab-panels v-model="tab" animated>
-        <q-tab-panel name="mails">
-          <div class="text-h6">尺寸表</div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </q-tab-panel>
-      </q-tab-panels>
-    </q-card>
-  </div>
 </template>
 
 <script setup>
