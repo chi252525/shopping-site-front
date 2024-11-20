@@ -1,80 +1,45 @@
 <template>
   <q-page class="q-gutter-md">
-    <div class="row justify-around">
-      <div class="col-3">
-        <q-list bordered class="rounded-borders">
-          <q-expansion-item
-            expand-separator
-            icon="mail"
-            label="Inbox"
-            caption="5 unread emails"
-            default-opened
-          >
-            <q-expansion-item
-              :header-inset-level="1"
-              expand-separator
-              icon="receipt"
-              label="Receipts"
-              default-opened
-            >
-              <q-expansion-item
-                switch-toggle-side
-                dense-toggle
-                label="Today"
-                :header-inset-level="1"
-                :content-inset-level="2"
-              >
-                <q-card>
-                  <q-card-section>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Quidem, eius reprehenderit eos corrupti commodi magni
-                    quaerat ex numquam, dolorum officiis modi facere maiores
-                    architecto suscipit iste eveniet doloribus ullam aliquid.
-                  </q-card-section>
-                </q-card>
-              </q-expansion-item>
+    <div class="row justify-center">
+      <div class="col-2">
+        <q-list bordered>
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-avatar color="teal" text-color="white" icon="list_alt" />
+            </q-item-section>
 
-              <q-expansion-item
-                switch-toggle-side
-                dense-toggle
-                label="Yesterday"
-                :header-inset-level="1"
-                :content-inset-level="2"
-              >
-                <q-card>
-                  <q-card-section>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Quidem, eius reprehenderit eos corrupti commodi magni
-                    quaerat ex numquam, dolorum officiis modi facere maiores
-                    architecto suscipit iste eveniet doloribus ullam aliquid.
-                  </q-card-section>
-                </q-card>
-              </q-expansion-item>
-            </q-expansion-item>
+            <q-item-section>我的歷史清單</q-item-section>
+          </q-item>
 
-            <q-expansion-item
-              :header-inset-level="1"
-              :content-inset-level="1"
-              expand-separator
-              icon="schedule"
-              label="Postponed"
-            >
-              <q-card>
-                <q-card-section>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Quidem, eius reprehenderit eos corrupti commodi magni quaerat
-                  ex numquam, dolorum officiis modi facere maiores architecto
-                  suscipit iste eveniet doloribus ullam aliquid.
-                </q-card-section>
-              </q-card>
-            </q-expansion-item>
-          </q-expansion-item>
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-avatar
+                color="teal"
+                text-color="white"
+                icon="favorite_border"
+              />
+            </q-item-section>
+
+            <q-item-section>我的追蹤清單</q-item-section>
+          </q-item>
+
+          <q-separator />
+
+          <q-item clickable v-ripple>
+            <q-item-section avatar>
+              <q-avatar>
+                <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+              </q-avatar>
+            </q-item-section>
+            <q-item-section>會員資料</q-item-section>
+          </q-item>
         </q-list>
       </div>
-      <div class="col-9">
+      <div class="col-5">
         <q-card>
           <q-card-section>
             <div class="text-h6">我的訂單</div>
+            <div class="text-subtitle">過去180天的訂單紀錄</div>
           </q-card-section>
 
           <q-card-section>
@@ -83,10 +48,6 @@
                 <q-item-section>
                   <div class="q-gutter-xs">
                     <div class="text-subtitle2">訂單編號 #{{ order.id }}</div>
-                    <div class="flex">
-                      <div class="text-caption">Status: {{ order.status }}</div>
-                      <div class="text-caption">Status: {{ order.status }}</div>
-                    </div>
                   </div>
                 </q-item-section>
 
