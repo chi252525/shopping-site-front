@@ -1,9 +1,9 @@
 <template>
   <q-page-container>
-    <q-container class="q-pl-lg q-pr-lg">
-      <div class="row q-col-gutter-lg">
+    <q-container>
+      <div class="row q-mt-md justify-center">
         <!-- Cart Items -->
-        <div class="col-12 col-lg-8">
+        <div class="col-xs-12 col-md-4 q-px-md">
           <q-list bordered separator>
             <q-item
               v-for="(item, index) in cartItems"
@@ -18,9 +18,7 @@
                   item.name
                 }}</q-item-label>
                 <q-item-label caption>SKU: {{ item.sku }}</q-item-label>
-                <q-item-label caption
-                  >Quantity: {{ item.quantity }}</q-item-label
-                >
+                <q-item-label caption>數量: {{ item.quantity }}</q-item-label>
               </q-item-section>
               <q-item-section side>
                 <q-item-label class="text-subtitle2"
@@ -32,7 +30,7 @@
         </div>
 
         <!-- Order Summary -->
-        <div class="col-12 col-lg-4">
+        <div class="col-xs-12 col-md-4">
           <q-card class="q-pa-md">
             <h3 class="text-h5 q-mb-md">訂單總計</h3>
             <div class="row justify-between q-mb-sm">
@@ -54,7 +52,7 @@
             </div>
             <q-btn
               color="primary"
-              label="Proceed to Payment"
+              label="確認下單"
               class="full-width q-mt-md"
               @click="proceedToPayment"
             />
@@ -63,7 +61,7 @@
 
         <!-- Shipping Information -->
         <div class="col-6">
-          <h3 class="text-h5 q-mb-md">送貨資料</h3>
+          <h3 class="text-h5 q-mb-md">收件人資料</h3>
           <q-form @submit="onSubmit" class="q-gutter-md">
             <div class="row q-col-gutter-md">
               <div class="col-12 col-md-6">
@@ -115,11 +113,7 @@
                 />
               </div>
             </div>
-            <q-btn
-              color="secondary"
-              label="Save Shipping Information"
-              type="submit"
-            />
+            <q-btn color="secondary" label="儲存為常用地址" type="submit" />
           </q-form>
         </div>
       </div>
@@ -141,6 +135,13 @@ const cartItems = ref([
     price: 99.99,
     quantity: 2,
     image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    name: 'Example Product 2',
+    sku: 'EX-789012',
+    price: 49.99,
+    quantity: 1,
+    image: 'https://cdn.quasar.dev/img/parallax1.jpg',
   },
   {
     name: 'Example Product 2',

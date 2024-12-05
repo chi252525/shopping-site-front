@@ -1,8 +1,8 @@
 <template>
   <q-page>
-    <div class="row justify-center">
+    <div class="row q-mt-md justify-center">
       <!-- Image Preview -->
-      <div class="col-4">
+      <div class="col-xs-12 col-md-4">
         <q-carousel
           v-model="slide"
           animated
@@ -25,17 +25,17 @@
       </div>
 
       <!-- Product Details -->
-      <div class="col-4">
+      <div class="col-xs-12 col-md-4 q-px-md">
         <h1 class="text-h4 q-mb-md">{{ product.name }}</h1>
         <p class="text-h6 q-mb-sm">${{ product.price.toFixed(2) }}</p>
-        <p class="text-subtitle1 q-mb-md">SKU: {{ product.sku }}</p>
+        <p class="text-subtitle1 q-mt-md">SKU: {{ product.sku }}</p>
         <p class="q-mb-md">{{ product.description }}</p>
-        <p class="text-subtitle1 q-mb-md">尺寸</p>
+        <p class="text-subtitle1 q-mt-md">尺寸</p>
         <q-select square standout :options="options" label="Square outlined" />
-        <p class="text-subtitle1 q-mb-md">顏色</p>
+        <p class="text-subtitle1 q-mt-md">顏色</p>
         <q-select square standout :options="options" label="Square outlined" />
         <!-- Quantity Selector -->
-        <div class="row items-center q-mb-md">
+        <div class="row items-center q-mt-md">
           <div class="col-12 col-sm-auto">
             <q-btn-group>
               <q-btn
@@ -64,7 +64,7 @@
         />
       </div>
     </div>
-    <div class="row justify-center">
+    <div class="row q-mt-md justify-center">
       <div class="col-8">
         <q-card>
           <q-tabs
