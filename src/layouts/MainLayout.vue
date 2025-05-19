@@ -53,6 +53,7 @@
                   隱私政策&nbsp; 運輸政策&nbsp; 退換貨政策&nbsp;
                   廠商合作請進&nbsp;
                 </div>
+                <div>客服信箱： tutuweitu@gmail.com</div>
                 <div>客服時間： 週一～週五 09:00-17:00</div>
                 <div>© 2024 葳兔童裝有限公司</div>
               </div>
